@@ -1,0 +1,38 @@
+[
+    {   
+        "id": 1,
+        "name": "fauzan",
+        "age": 22,
+        "cars": [
+            {
+                "name": "Suzuki",
+                "models": [
+                    "Katana",
+                    "Jimny"
+                ]
+            },
+            {
+                "name": "honda",
+                "models":[
+                    "WRV",
+                    "CRV"
+                ]
+            }
+            
+        ]
+
+    },
+    {   
+        "id": 2,
+        "name": "Yogie",
+        "age": "46",
+        "cars":[
+            {
+                "name": "Hyundai",
+                "models":[
+                    "ionic6"
+                ]
+            }
+        ]
+    }
+]
