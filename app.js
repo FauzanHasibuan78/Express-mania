@@ -1,6 +1,9 @@
-const { error } = require('console');
+// const { error } = require('console');
 const express = require('express');
 const fs = require('fs');
+
+const { userRoutes } = require('./routes/userRoutes');
+const {productRoutes} = require('./routes/productRoutes')
 
 const app = express();
 const PORT = 3001;
@@ -16,12 +19,9 @@ app.get('/about', (req, res) => {
     res.sendFile('./public/about.html', { root: __dirname})
 })
 
-app.get('/users', (req, res) => {
-    fs.readFile('./db/fake_database.json', 'utf8', (error, data) => {
-        if (error) res.send("terjadi kesalahan pada pembacaan file")
-        res.send(JSON.parse(data))
-    })
-})
+app.use(userRoutes)
+
+app.use("/products", productRoutes)
 
 app.listen(PORT, () => {
     console.log(`aplikasi sudah berjalan pada http://localhost:${PORT}`)
